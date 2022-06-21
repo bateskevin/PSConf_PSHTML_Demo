@@ -25,7 +25,6 @@ html {
             }
         }
 
-
             p {
                 h1 "This is h1"
                 h2 "This is h2"
@@ -58,7 +57,6 @@ html {
                 }
             }
         }
-
 
             p {
                 h1 "This is h1"
