@@ -16,7 +16,7 @@ $HTMLPage = html {
     body {
 
         Header {
-            h1 "This is a Pester Report for the Powershell Module PSHarmonize"
+            h1 "This is a Pester Report for the Powershell Module PSHarmonize" -Style "text-align:center"
             div {
                 p {
                     "See here the test results."   
@@ -32,7 +32,7 @@ $HTMLPage = html {
                         $Data1 = @($($PesterResult.PassedCount),$($PesterResult).FailedCount)
             
             
-                        $colors = @("LightGreen","Red","LightBlue","LightYellow")
+                        $colors = @("LightGreen","Red")
                         $dsd1 = New-PSHTMLChartDoughnutDataSet -Data $data1 -label "PesterResult" -backgroundcolor $colors -hoverbackgroundColor $Colors
             
                         New-PSHTMLChart -type doughnut -DataSet @($dsd1) -title "PSHarmonize Doughnut chart" -Labels $Labels -CanvasID $DoughnutCanvasID
@@ -42,9 +42,9 @@ $HTMLPage = html {
         
                         
         
-                    }
+                    } -Style "margin: 0 auto; display: block;"
 
-            }
+            } -Style "text-align:center"
         }
 
 

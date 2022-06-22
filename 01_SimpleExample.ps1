@@ -4,6 +4,8 @@ Install-Module PSHTML
 # Import the Module 
 Import-Module PSHTML
 
+$ErrorActionPreference = "Stop"
+$Numbers = 1..5
 
 # Simple HTML example
 html {
@@ -25,15 +27,17 @@ html {
             }
         }
 
-            p {
-                h1 "This is h1"
-                h2 "This is h2"
-                h3 "This is h3"
-                h4 "This is h4"
-                h5 "This is h5"
-                h6 "This is h6"
-
+        foreach($number in $Numbers){
+            try{
+                if($number -lt 3){
+                    throw "Number is to low"
+                }
+                p "Number: $($number) is high enough"
+            }catch{
+                p "Number: $($number) is to low"
             }
+            
+        }
     }
 
 } 
@@ -58,15 +62,17 @@ html {
             }
         }
 
-            p {
-                h1 "This is h1"
-                h2 "This is h2"
-                h3 "This is h3"
-                h4 "This is h4"
-                h5 "This is h5"
-                h6 "This is h6"
-
+        foreach($number in $Numbers){
+            try{
+                if($number -lt 3){
+                    throw "Number is to low"
+                }
+                p "Number: $($number) is high enough"
+            }catch{
+                p "Number: $($number) is to low"
             }
+            
+        }
     }
 
 } | Out-File './example.html'
